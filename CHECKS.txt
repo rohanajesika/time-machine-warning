@@ -1,0 +1,47 @@
+Funniest Time Machine Warning Label — local checks (build session, 2026-11-24 ~19:55 WIB)
+Competition: u-eager-stork-81-9647-funniest-time-machine-warning-f8add151
+Entry: "WARNING: If you meet yourself, do not tell yourself anything. You already know, and you still won't listen."
+Length: 107 characters, 107 bytes, 18 words, single line, no trailing newline.
+Classification: BUNDLE (requirements API: transcripts_witnessed applies: false;
+RULES.txt transcript-gate list has no transcripts_witnessed). Body said
+STRICT/RECORD — corrected by verification, as with warning-label-humans.
+
+1. Node 22.21.1 run (~/workspace/makefun/_tools/node22/bin/node): exit 0.
+   Node 24.22.1 run: exit 0. Outputs byte-identical, md5
+   03d298bb68a1e684773e70c3031cf17d (both runs, v1 and v2).
+2. Grader simulation (copy in /tmp/tm-sim, entry folder read-only, run as
+   user 65534/nobody from cwd /, no network via `unshare -n`,
+   MAKEFUN_OUTPUT_DIR to an empty writable dir): exit 0 in 0.13 s,
+   output byte-identical (md5 03d298bb68a1e684773e70c3031cf17d).
+   A stale file in the output dir survived untouched: the program
+   never deletes the output directory, only writes entry.txt into it.
+   Second run: exit 0, same md5 (deterministic).
+3. Negative tests (copies outside the repo, Node 22.21.1):
+   - newline smuggled into the label -> exit 1, no entry.txt.
+   - label of 190 characters -> exit 1 ("label is 190 characters,
+     must be 1-120"), no entry.txt.
+   - label without WARNING:/CAUTION: prefix -> exit 1, no entry.txt.
+   - exclamation mark in the label -> exit 1, no entry.txt.
+   - label naming no time-travel hazard (v2 gate) -> exit 1, no entry.txt.
+4. Revision (v2, real): added a hazard-word gate — the label must name
+   a time-travel hazard (yourself/past/future/ancestor/butterfly/
+   paradox/timeline/grandfather) so an edit that drops the topic fails
+   loudly instead of being graded as a generic warning. Re-ran all
+   checks after the revision; scores above are the post-revision
+   scores. Final main.ts content differs from the first write.
+5. Quality review vs the brief (judge criteria in order):
+   - Time-machine warning label: meeting your own past self, the
+     classic duplicate-self hazard, in "WARNING:" safety-notice form.
+   - Hazard turned into the joke: the reason not to warn yourself is
+     not a paradox — it is that you never listen to yourself.
+   - Surprise in the last few words: "you still won't listen" flips
+     the whole instruction; the warning was never needed.
+   - Straight face: "WARNING: If you meet yourself, do not tell
+     yourself anything." reads as a genuine printed safety notice.
+   - No wasted words: 107/120 characters, every clause doing work —
+     "You already know" sets up the flip, "you still won't listen"
+     lands it. One joke, one scene, no second idea, no filler.
+   - Eight candidates weighed in main.ts comments with measured
+     counts (107/110/97/71/90/93/96/90); the pick wins on
+     recognition (everyone has ignored their own advice) and on the
+     turn arriving last.
